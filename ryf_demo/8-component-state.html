@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="j-example"></div>
+    <script type="text/babel">
+      var MyComponent = React.createClass({
+        getInitialState:function(){
+          return {liked:true};
+        },
+        handleClick:function(){
+          this.setState({liked:!this.state.liked});
+        },
+        render:function(){
+          var txt = this.state.liked ? 'haha' : 'hehe';
+
+          return (
+            <p>
+               <span onClick={this.handleClick}>hello, {txt} </span> &lt;-- click this
+            </p>          
+            );
+        }
+      });
+
+      ReactDOM.render(
+        <MyComponent />
+        ,document.getElementById('j-example')
+      );
+    </script>
+  </body>
+</html>
+
