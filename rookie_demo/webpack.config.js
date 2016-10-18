@@ -4,7 +4,8 @@ var webpack = require('webpack');
 module.exports = {
     entry: {
         vendors: ['react', 'redux'],
-        demo_list: './src/demo_list.js'
+        demo_list: './src/demo_list.js',
+        demo_form: './src/demo_form.js'
     },
     output: {
         publicPath: "/dist/",
